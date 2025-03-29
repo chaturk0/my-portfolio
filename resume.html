@@ -3,20 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume - Chatur Kaur</title>
+    <title>Resume | Chatur Kaur</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <div id="header-container"></div> <!-- Header will be loaded here -->
     <script src="script.js"></script>
 
-    <section>
-        <h2>Download My Resume</h2>
-        <a href="assets/resume.pdf" download>Click here to download</a>
+    <section id="resume">
+        <h2>My Resume</h2>
+
+        <!-- Embedded PDF Viewer -->
+        <iframe src="assets/resume.pdf" width="100%" height="600px"></iframe>
+
+        <!-- Download Button -->
+        <div class="resume-download">
+            <a href="assets/resume.pdf" download="Chatur_Kaur_Resume.pdf" class="btn">📥 Download Resume</a>
+        </div>
     </section>
 
     <footer>
-        <p>© 2024 Chatur Kaur</p>
+        <p>© 2024 Chatur Kaur | Built with 💙</p>
     </footer>
+
 </body>
 </html>
