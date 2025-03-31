@@ -3,51 +3,254 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chatur Kaur | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            display: flex;
+            margin: 0;
+            font-family: Geneva, Verdana, sans-serif;
+            background-color: #0A192F;
+            color: white;
+            transition: background 0.3s;
+            position: relative;
+        }
+        .sidebar {
+            width: 25%;
+            height: 100vh;
+            background-color: #0A192F;
+            padding: 40px;
+            position: fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            font-family: "Courier New", Courier, monospace;
+        }
+        .sidebar h1 {
+            font-size: 3.0rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .sidebar p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .sidebar nav {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .sidebar nav a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s, transform 0.3s;
+        }
+        .sidebar nav a:hover, .sidebar nav a.active {
+            color: white;
+            transform: scale(1.1);
+            font-weight: bold;
+        }
+        .social-icons {
+            display: flex;
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .social-icons a {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 2.0rem;
+            transition: color 0.3s;
+        }
+        .social-icons a:hover {
+            color: white;
+        }
+        .dark-mode-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: rgba(255, 255, 255, 0.7);
+            transition: color 0.3s;
+        }
+        .dark-mode-toggle:hover {
+            color: white;
+        }
+        .content {
+            margin-left: 30%;
+            width: 70%;
+            padding: 50px;
+            overflow-y: auto;
+            scroll-behavior: smooth;
+        }
+        section {
+            margin-bottom: 50px;
+        }
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .skill-button {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: default;
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 400px;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 95%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .contact-form button {
+            background: #FF6F61;
+            color: white;
+            border: none;
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .contact-form button:hover {
+            background: #FF4A3D;
+        }
+        .dark-mode {
+            background-color: #f4f4f4;
+            color: #0A192F;
+        }
+        .dark-mode .sidebar {
+            background-color: #333;
+        }
+    </style>
 </head>
 <body>
-    <div id="header-container"></div>
-    <script src="script.js"></script>
-
-    <section id="about">
-        <img src="assets/profile.jpg" alt="Chatur Kaur">
-        <p>As a Senior Software Engineer at SentinelOne, I leverage my expertise in software development and cybersecurity...</p>
-    </section>
-
-    <section id="experience">
-        <h2>Experience</h2>
-        <p>✅ Senior Software Engineer - SentinelOne</p>
-        <p>✅ Software Developer - Cisco</p>
-        <p>✅ Network Consulting Engineer - Cisco</p>
-    </section>
-
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project">
-            <img src="assets/project1.png" alt="Project 1">
-            <p>Automated Network Diagnostic Tool</p>
+    <i class="fas fa-moon dark-mode-toggle" onclick="toggleDarkMode()"></i>
+    <div class="sidebar">
+        <h1>Chatur Kaur</h1>
+        <p>Software Engineer</p>
+        <p>I build accessible, pixel-perfect digital experiences for the web.</p>
+        <nav>
+            <a href="#about" onclick="setActive(this)"> About</a>
+            <a href="#skills" onclick="setActive(this)"> Skills</a>
+            <a href="#experience" onclick="setActive(this)"> Experience</a>
+            <a href="#projects" onclick="setActive(this)"> Projects</a>
+            <a href="#blogs" onclick="setActive(this)"> Blogs</a>
+            <a href="#contact" onclick="setActive(this)"> Contact me</a>
+        </nav>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/chatur-kaur/"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/chaturk0"><i class="fab fa-github"></i></a> 
+            <a href="https://medium.com/me/stories/public"><i class="fab fa-medium"></i></a> 
         </div>
-    </section>
-
-    <section id="resume">
-        <h2>Resume</h2>
-        <a href="assets/resume.pdf" download>Download My Resume</a>
-    </section>
-
-    <section id="blog">
-        <h2>Latest Blog Posts</h2>
-        <p>🚀 "Cybersecurity Trends in 2025" - Read More</p>
-    </section>
-
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: your.email@example.com</p>
-        <p>LinkedIn: <a href="https://linkedin.com/in/chaturkaur">linkedin.com/in/chaturkaur</a></p>
-    </section>
-
-    <footer>
-        <p>© 2024 Chatur Kaur | Built with 💙</p>
-    </footer>
+    </div>
+    <div class="content">
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Senior Software Engineer experienced in developing scalable systems using Python, Java, and Go within microservices
+                architectures. Demonstrated expertise in API development, container orchestration with Docker and Kubernetes, and CI/CD
+                pipelines. Proven record in optimizing system performance and integrating modern engineering practices to accelerate digital
+                initiatives.</p>
+        </section>
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills-container" id="skills-list"></div>
+        </section>
+        <section id="experience">
+            <h2>Experience</h2>
+            <p>SentinelOne Jun 2024 - Present </br></br>
+                SENIOR SOFTWARE ENGINEER</br>
+                • Developed and optimized machine learning pipelines to process identity and security data, demonstrating strong analytical and
+                programming skills while ensuring efficient real-time anomaly detection.</br>
+                • Implemented deep learning models using TensorFlow/PyTorch, applying OOP principles and test-driven development to enhance
+                behavioral analysis in identity security solutions.</br>
+                • Processed large-scale telemetry data using robust data preprocessing techniques and leveraging relational database skills for supporting
+                scalable insights.</br>
+                • Increased model deployment efficiency by integrating ML models with container technologies like Kubernetes and messaging systems
+                such as Kafka, aligning with microservices and CI/CD methodologies.</br>
+                • Improved test coverage from 15% to 80% in machine learning-driven identity solutions, ensuring robust model performance through
+                disciplined software engineering practices.</br>
+                • Collaborated with cross-functional teams to integrate applications written in Go, Python, and C++ with advanced monitoring tools,
+                reflecting proficiency in REST API development and modern software design.</br>
+                Cisco Jan 2020 - Jun 2024</br></br>
+                SOFTWARE ENGINEER</br>
+                • Designed and developed RESTful APIs to facilitate seamless data exchange in SD-WAN controller services, reinforcing core software
+                engineering practices and systems architecture.</br>
+                • Built a diagnostic tool for VManage (SD-WAN Controller) using Python and REST API, applying TDD and functional programming
+                paradigms to reduce bug detection time by 70%.</br> 
+                • Enhanced system performance and reliability by refining API design and implementing improvements that reflected a deep under-
+                standing of microservices, containerization (Docker, Kubernetes), and CI/CD pipeline practices.</p>
+        </section>
+        <section id="projects">
+            <h2>Projects</h2>
+            <p>HAND-WRITTEN CHARACTER RECOGNIZER...</p>
+        </section>
+        <section id="blogs">
+            <h2>Blogs</h2>
+            <p>HAND-WRITTEN CHARACTER RECOGNIZER...</p>
+        </section>
+        <section id="contact">
+            <h2>Contact me</h2>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </div>
 </body>
+<script>
+    function toggleDarkMode() {
+        document.body.classList.toggle('dark-mode');
+    }
+
+    function setActive(element) {
+        document.querySelectorAll('.sidebar nav a').forEach(link => {
+            link.classList.remove('active');
+        });
+        element.classList.add('active');
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("contact-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+            alert("Thank you for reaching out! I'll get back to you soon.");
+            this.reset();
+        });
+    });
+    document.addEventListener("DOMContentLoaded", function () {
+        const skills = [
+            "Python", "Java", "Go", "C++", "JavaScript", "TensorFlow",
+            "React", "Node.js", "Docker", "Kubernetes", "SQL", "MongoDB",
+            "GraphQL", "Flask", "Django", "CI/CD", "AWS", "Azure"
+        ];
+
+        const skillsContainer = document.getElementById("skills-list");
+
+        skills.forEach(skill => {
+            const skillElement = document.createElement("span");
+            skillElement.classList.add("skill-button");
+            skillElement.textContent = skill;
+            skillsContainer.appendChild(skillElement);
+        });
+    });
+</script>
 </html>
