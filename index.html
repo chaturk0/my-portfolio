@@ -105,6 +105,11 @@
             font-size: 1.1rem;
         }
 
+        .content a {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1rem;
+        }
+
         section {
             margin-left: 10%;
             margin-bottom: 50px;
@@ -123,6 +128,47 @@
             font-size: 1rem;
             border-radius: 5px;
             cursor: default;
+        }
+        .blog-card h4 {
+            margin-top: 1px;
+            font-size: 0.9rem;
+            margin-bottom: 0.5px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .blog-card, .project-card {
+            background: #112240;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .blog-card:hover, .project-card:hover {
+            transform: scale(1.05);
+        }
+        .blog-card img, .project-card img {
+            width: 100%;
+            max-height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .blog-card h3, .project-card h3 {
+            margin-top: 10px;
+            color: white;
+        }
+        .blog-card p, .project-card p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            width: 80%;
+            flex-wrap: wrap;
+            gap: 50px;
+            justify-content: center;
         }
         .contact-form {
             display: flex;
@@ -153,12 +199,23 @@
         .contact-form button:hover {
             background: #FF4A3D;
         }
-        .dark-mode {
-            background-color: #f4f4f4;
+        .dark-mode, .dark-mode .content p, .dark-mode .content h2, .dark-mode .content a {
+            background-color: #c0b4b4;
             color: #0A192F;
         }
-        .dark-mode .sidebar {
-            background-color: #333;
+        .dark-mode .skill-button {
+            background: rgba(255, 255, 255, 0.816);
+            color: #0A192F;
+        }
+        .dark-mode .sidebar, .dark-mode .sidebar p,.dark-mode .sidebar nav, .dark-mode .sidebar nav a, .dark-mode .social-icons a{
+            background-color: #c0b4b4;
+            color: #062450;
+        }
+        .dark-mode .contact-form{
+            background: #062450;
+        }
+        .no-underline {
+            text-decoration: none;
         }
     </style>
 </head>
@@ -169,7 +226,6 @@
         <p>Software Engineer</p>
         <p>I build accessible, pixel-perfect digital experiences for the web.</p>
         <nav>
-            <a href="#about"> About</a>
             <a href="#skills"> Skills</a>
             <a href="#experience"> Experience</a>
             <a href="#projects"> Projects</a>
@@ -184,7 +240,6 @@
     </div>
     <div class="content">
         <section id="about">
-            <h2>About me</h2>
             <p>
                 Senior Software Engineer experienced in developing scalable systems using Python, Java, and Go within microservices
                 architectures. Demonstrated expertise in API development, container orchestration with Docker and Kubernetes, and CI/CD
@@ -198,76 +253,68 @@
         </section>
         <section id="experience">
             <h2>Experience</h2>
-            <p>SentinelOne Jun 2024 - Present </br></br>
-                SENIOR SOFTWARE ENGINEER</br></br>
-                • Developed and optimized machine learning pipelines to process identity and security data, demonstrating strong analytical and
-                programming skills while ensuring efficient real-time anomaly detection.</br>
-                • Implemented deep learning models using TensorFlow/PyTorch, applying OOP principles and test-driven development to enhance
-                behavioral analysis in identity security solutions.</br>
-                • Processed large-scale telemetry data using robust data preprocessing techniques and leveraging relational database skills for supporting
-                scalable insights.</br>
-                • Increased model deployment efficiency by integrating ML models with container technologies like Kubernetes and messaging systems
-                such as Kafka, aligning with microservices and CI/CD methodologies.</br>
-                • Improved test coverage from 15% to 80% in machine learning-driven identity solutions, ensuring robust model performance through
-                disciplined software engineering practices.</br>
-                • Collaborated with cross-functional teams to integrate applications written in Go, Python, and C++ with advanced monitoring tools,
-                reflecting proficiency in REST API development and modern software design.</br>
-                Cisco Jan 2020 - Jun 2024</br></br>
-                SOFTWARE ENGINEER</br></br>
-                • Designed and developed RESTful APIs to facilitate seamless data exchange in SD-WAN controller services, reinforcing core software
-                engineering practices and systems architecture.</br>
-                • Built a diagnostic tool for VManage (SD-WAN Controller) using Python and REST API, applying TDD and functional programming
-                paradigms to reduce bug detection time by 70%.</br> 
-                • Enhanced system performance and reliability by refining API design and implementing improvements that reflected a deep under-
-                standing of microservices, containerization (Docker, Kubernetes), and CI/CD pipeline practices.</p>
+                <div class="blog-card">
+                    <h3>Senior Software Engineer, SentinelOne</h3><h4>Jun 2024 - Present </h4>
+                    <p> • Implemented deep learning models using TensorFlow/PyTorch, applying OOP principles and test-driven development to enhance
+                        behavioral analysis in identity security solutions.</br>
+                        • Improved test coverage from 15% to 80% in machine learning-driven identity solutions, ensuring robust model performance through
+                        disciplined software engineering practices.</br>
+                        • Collaborating with cross-functional teams to integrate applications written in Go, Python, and C++ with advanced monitoring tools,
+                        reflecting proficiency in REST API development and modern software design.</br></p>
+                </div>
+                <div class="blog-card">
+                    <h3>Software Engineer, Cisco</h3><h4>Jan 2020 - Jun 2024</h4>
+                    <p>• Designed and developed RESTful APIs to facilitate seamless data exchange in SD-WAN controller services, reinforcing core software
+                        engineering practices and systems architecture.</br>
+                        • Built a diagnostic tool for VManage (SD-WAN Controller) using Python and REST API, applying TDD and functional programming
+                        paradigms to reduce bug detection time by 70%.</br> 
+                        • Enhanced system performance and reliability by refining API design and implementing improvements that reflected a deep under-
+                        standing of microservices, containerization (Docker, Kubernetes), and CI/CD pipeline practices.</p>
+                </div>
+                <a href="https://www.linkedin.com/in/chatur-kaur/" target="_blank">View Full Resume ↠</a>
         </section>
         <section id="projects">
             <h2>Projects</h2>
-            <p>  SENIOR SOFTWARE ENGINEER</br></br>
-                • Developed and optimized machine learning pipelines to process identity and security data, demonstrating strong analytical and
-                programming skills while ensuring efficient real-time anomaly detection.</br>
-                • Implemented deep learning models using TensorFlow/PyTorch, applying OOP principles and test-driven development to enhance
-                behavioral analysis in identity security solutions.</br>
-                • Processed large-scale telemetry data using robust data preprocessing techniques and leveraging relational database skills for supporting
-                scalable insights.</br>
-                • Increased model deployment efficiency by integrating ML models with container technologies like Kubernetes and messaging systems
-                such as Kafka, aligning with microservices and CI/CD methodologies.</br>
-                • Improved test coverage from 15% to 80% in machine learning-driven identity solutions, ensuring robust model performance through
-                disciplined software engineering practices.</br>
-                • Collaborated with cross-functional teams to integrate applications written in Go, Python, and C++ with advanced monitoring tools,
-                reflecting proficiency in REST API development and modern software design.</br>
-                Cisco Jan 2020 - Jun 2024</br></br>
-                SOFTWARE ENGINEER</br></br>
-                • Designed and developed RESTful APIs to facilitate seamless data exchange in SD-WAN controller services, reinforcing core software
-                engineering practices and systems architecture.</br>
-                • Built a diagnostic tool for VManage (SD-WAN Controller) using Python and REST API, applying TDD and functional programming
-                paradigms to reduce bug detection time by 70%.</br> 
-                • Enhanced system performance and reliability by refining API design and implementing improvements that reflected a deep under-
-                standing of microservices, containerization (Docker, Kubernetes), and CI/CD pipeline practices.</p></p>
+            <div class="projects-container">
+                <div style="display: inline;" class="project-card">
+                    <img src="https://via.placeholder.com/300" alt="Project 1">
+                    <h3>AI Chatbot</h3>
+                    <p>An AI-powered chatbot that assists users in answering queries intelligently.</p>
+                </div>
+                <div style="display: inline;" class="project-card">
+                    <img src="https://via.placeholder.com/300" alt="Project 2">
+                    <h3>Real-Time Dashboard</h3>
+                    <p>A web-based dashboard that displays live analytics data in an interactive way.</p>
+                </div>
+                <div style="display: inline;" class="project-card">
+                    <img src="https://via.placeholder.com/300" alt="Project 3">
+                    <h3>segfvad</h3>
+                    <p>A fvdsfvd isplays live analytics data in an interactive way.</p>
+                </div>
+            </div>
         </section>
         <section id="blogs">
             <h2>Blogs</h2>
-            <p>  SENIOR SOFTWARE ENGINEER</br>
-                • Developed and optimized machine learning pipelines to process identity and security data, demonstrating strong analytical and
-                programming skills while ensuring efficient real-time anomaly detection.</br>
-                • Implemented deep learning models using TensorFlow/PyTorch, applying OOP principles and test-driven development to enhance
-                behavioral analysis in identity security solutions.</br>
-                • Processed large-scale telemetry data using robust data preprocessing techniques and leveraging relational database skills for supporting
-                scalable insights.</br>
-                • Increased model deployment efficiency by integrating ML models with container technologies like Kubernetes and messaging systems
-                such as Kafka, aligning with microservices and CI/CD methodologies.</br>
-                • Improved test coverage from 15% to 80% in machine learning-driven identity solutions, ensuring robust model performance through
-                disciplined software engineering practices.</br>
-                • Collaborated with cross-functional teams to integrate applications written in Go, Python, and C++ with advanced monitoring tools,
-                reflecting proficiency in REST API development and modern software design.</br>
-                Cisco Jan 2020 - Jun 2024</br></br>
-                SOFTWARE ENGINEER</br>
-                • Designed and developed RESTful APIs to facilitate seamless data exchange in SD-WAN controller services, reinforcing core software
-                engineering practices and systems architecture.</br>
-                • Built a diagnostic tool for VManage (SD-WAN Controller) using Python and REST API, applying TDD and functional programming
-                paradigms to reduce bug detection time by 70%.</br> 
-                • Enhanced system performance and reliability by refining API design and implementing improvements that reflected a deep under-
-                standing of microservices, containerization (Docker, Kubernetes), and CI/CD pipeline practices.</p></p>
+            <div class="projects-container">
+                <div class="project-card">
+                    <a href="https://medium.com/@chaturk0/revolutionizing-x-industry-with-ai-ea28b5e35e22" class="no-underline" target="_blank">
+                        <img src="Blog1.png" alt="Revolutionizing (X industry) with AI?">
+                        <h3>Revolutionizing (X industry) with AI?</h3>
+                        <p>“𝗔𝗜 𝗶𝘀 90% 𝗺𝗮𝗿𝗸𝗲𝘁𝗶𝗻𝗴 𝗮𝗻𝗱 10% 𝗿𝗲𝗮𝗹𝗶𝘁𝘆!”
+                            Yes, you read that 𝗿𝗶𝗴𝗵𝘁...</p>
+                    </a>
+                </div>
+                <div style="display: inline;" class="project-card">
+                    <img src="https://via.placeholder.com/300" alt="Blog 2">
+                    <h3>Real-Timesfvboard</h3>
+                    <p>A web-based dashbsvfdays live analytics data in an interactive way.</p>
+                </div>
+                <div style="display: inline;" class="project-card">
+                    <img src="https://via.placeholder.com/300" alt="Blog 3">
+                    <h3>segfvad</h3>
+                    <p>A fvdsfvd isplays live analytics data in an interactive way.</p>
+                </div>
+            </div>
         </section>
         <section id="contact">
             <h2>Contact me</h2>
