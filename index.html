@@ -11,7 +11,7 @@
             display: flex;
             margin: 0;
             font-family: Geneva, Verdana, sans-serif;
-            background-color: #0A192F;
+            background: #0A192F;
             color: white;
             transition: background 0.3s;
             position: relative;
@@ -98,6 +98,7 @@
         .content h2 {
             color: rgba(255, 255, 255, 0.872);
             font-size: 1.5rem;
+            margin-bottom: 30px;
         }
 
         .content p {
@@ -136,7 +137,7 @@
             color: rgba(255, 255, 255, 0.7);
         }
         .blog-card, .project-card {
-            background: #112240;
+            background: #0A192F;
             padding: 20px;
             border-radius: 10px;
             margin-bottom: 20px;
@@ -148,6 +149,8 @@
         }
         .blog-card:hover, .project-card:hover {
             transform: scale(1.05);
+            background: #112240;
+            transform: scale(1.1);
         }
         .blog-card img, .project-card img {
             width: 100%;
@@ -219,12 +222,12 @@
         }
     </style>
 </head>
-<body>
+<body></body>
     <i class="fas fa-moon dark-mode-toggle" onclick="toggleDarkMode()"></i>
     <div class="sidebar">
         <h1 onclick="scrollToTop()">Chatur Kaur</h1>
         <p>Software Engineer</p>
-        <p>I build accessible, pixel-perfect digital experiences for the web.</p>
+        <p>I engineer secure, scalable, and automated solutions at the intersection of cybersecurity and networking.</p>
         <nav>
             <a href="#skills"> Skills</a>
             <a href="#experience"> Experience</a>
@@ -271,7 +274,7 @@
                         • Enhanced system performance and reliability by refining API design and implementing improvements that reflected a deep under-
                         standing of microservices, containerization (Docker, Kubernetes), and CI/CD pipeline practices.</p>
                 </div>
-                <a href="https://www.linkedin.com/in/chatur-kaur/" target="_blank">View Full Resume ↠</a>
+                <a href="resume.pdf" target="_blank">View Full Resume ↠</a>
         </section>
         <section id="projects">
             <h2>Projects</h2>
