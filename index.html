@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%230A192F'/><text x='50%' y='55%' text-anchor='middle' font-size='50' fill='white' font-family='Arial' font-weight='bold'>C</text></svg>">
     <style>
         body {
             display: flex;
@@ -148,17 +149,17 @@
         <p>Software Engineer</p>
         <p>I build accessible, pixel-perfect digital experiences for the web.</p>
         <nav>
-            <a href="#about" onclick="setActive(this)"> About</a>
-            <a href="#skills" onclick="setActive(this)"> Skills</a>
-            <a href="#experience" onclick="setActive(this)"> Experience</a>
-            <a href="#projects" onclick="setActive(this)"> Projects</a>
-            <a href="#blogs" onclick="setActive(this)"> Blogs</a>
-            <a href="#contact" onclick="setActive(this)"> Contact me</a>
+            <a href="#about"> About</a>
+            <a href="#skills"> Skills</a>
+            <a href="#experience"> Experience</a>
+            <a href="#projects"> Projects</a>
+            <a href="#blogs"> Blogs</a>
+            <a href="#contact"> Contact me</a>
         </nav>
         <div class="social-icons">
-            <a href="https://www.linkedin.com/in/chatur-kaur/"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/chaturk0"><i class="fab fa-github"></i></a> 
-            <a href="https://medium.com/me/stories/public"><i class="fab fa-medium"></i></a> 
+            <a href="https://www.linkedin.com/in/chatur-kaur/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/chaturk0" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://medium.com/@chaturk0" target="_blank"><i class="fab fa-medium"></i></a>
         </div>
     </div>
     <div class="content">
@@ -216,20 +217,37 @@
             </form>
         </section>
     </div>
-</body>
-<script>
-    function toggleDarkMode() {
-        document.body.classList.toggle('dark-mode');
-    }
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
 
-    function setActive(element) {
-        document.querySelectorAll('.sidebar nav a').forEach(link => {
-            link.classList.remove('active');
+        function setActive(element) {
+            document.querySelectorAll('.sidebar nav a').forEach(link => {
+                link.classList.remove('active');
+            });
+            element.classList.add('active');
+        }
+        document.addEventListener("scroll", () => {
+            const sections = document.querySelectorAll("section");
+            const navLinks = document.querySelectorAll(".sidebar nav a");
+            let current = "";
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 50;
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute("id");
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove("active");
+                if (link.getAttribute("href").includes(current)) {
+                    link.classList.add("active");
+                }
+            });
         });
-        element.classList.add('active');
-    }
-
-    document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("contact-form").addEventListener("submit", function (event) {
             event.preventDefault();
             alert("Thank you for reaching out! I'll get back to you soon.");
@@ -252,5 +270,6 @@
             skillsContainer.appendChild(skillElement);
         });
     });
-</script>
+    </script>
+</body>
 </html>
